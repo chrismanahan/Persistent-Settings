@@ -34,6 +34,11 @@
 //    });
 }
 
+/**
+ *  Swizzles a getter method with our catchall getter
+ *
+ *  @param methodName Name of getter for property
+ */
 + (void)swizzleGetterWithName:(NSString*)methodName
 {
     SEL originalSelector = NSSelectorFromString(methodName);
@@ -41,6 +46,13 @@
     [self swizzleSelector:originalSelector with:swizzledSelector];
 }
 
+/**
+ *  Swizzles a setter method with our catchall setter
+ *
+ *  @param methodName Name of setter for property
+ *
+ *  @note Method name must be prefixed with `set`
+ */
 + (void)swizzleSetterWithName:(NSString*)methodName
 {
     NSAssert([methodName hasPrefix:@"set"], @"method must be a setter");
@@ -49,6 +61,12 @@
     [self swizzleSelector:originalSelector with:swizzledSelector];
 }
 
+/**
+ *  Swizzles two selectors
+ *
+ *  @param originalSelector Original selector
+ *  @param swizzledSelector Selector to swizzle to
+ */
 + (void)swizzleSelector:(SEL)originalSelector with:(SEL)swizzledSelector
 {
     /**
@@ -65,7 +83,12 @@
 }
 
 #pragma mark - Helpers
-+ (NSArray *)allPropertyNames
+/**
+ *  Get's an array of all the properties for the caller
+ *
+ *  @return Array of properties as strings
+ */
++ (NSArray<NSString*>*)allPropertyNames
 {
     /**
      * Adapted from http://stackoverflow.com/a/11774276/544094
@@ -87,13 +110,27 @@
     
     return rv;
 }
-
+/**
+ *  Generates the key to use with NSUserDefaults for a given property
+ *
+ *  @param prop Property name
+ *
+ *  @return Key derived from property and calling class
+ */
 - (NSString*)keyForProperty:(NSString*)prop
 {
     NSString *className = NSStringFromClass([self class]);
     return [NSString stringWithFormat:@"%@_%@", className, prop];
 }
-
+/**
+ *  Truncates a setter method for the associated property name
+ *
+ *  @param setter Setter method
+ *
+ *  @return Property name associated with setter
+ *
+ *  @note setter must be prefixed with `set`
+ */
 - (NSString*)propertyFromSetter:(NSString*)setter
 {
     NSAssert([setter hasPrefix:@"set"], @"method must be a setter");
@@ -107,7 +144,11 @@
 }
 
 #pragma mark - Swizzled Methods
-
+/**
+ *  Setter that will be called for all properties
+ *
+ *  @param val Value passed into the setter
+ */
 - (void)pst_swizzledSetter:(id)val
 {
     NSString *setter = NSStringFromSelector(_cmd);
@@ -116,7 +157,11 @@
     [[NSUserDefaults standardUserDefaults] setObject:val forKey:[self keyForProperty:prop]];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
-
+/**
+ *  Getter that will be called for all properties
+ *
+ *  @return Value associated with property being requested
+ */
 - (id)pst_swizzledGetter
 {
     NSString *getter = NSStringFromSelector(_cmd);

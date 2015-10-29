@@ -47,7 +47,6 @@
 
 + (void)swizzleGetterWithName:(NSString*)methodName
 {
-    // BUG: the same method can't be used for swizzling. thats why its getting confused
     SEL originalSelector = NSSelectorFromString(methodName);
     SEL swizzledSelector = @selector(pst_swizzledGetter);
     [self swizzleSelector:originalSelector with:swizzledSelector];
@@ -68,30 +67,20 @@
      *  Thanks Mattt
      */
 
-        Class class = [self class];
-        
-        Method originalMethod = class_getInstanceMethod(class, originalSelector);
-        Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
-        
-//        BOOL didAddMethod =
-//        class_addMethod(class,
-//                        originalSelector,
-//                        method_getImplementation(swizzledMethod),
-//                        method_getTypeEncoding(swizzledMethod));
-    
-//        if (didAddMethod) {
-            class_replaceMethod(class,
-                                originalSelector,
-                                method_getImplementation(swizzledMethod),
-                                method_getTypeEncoding(swizzledMethod));
-//        } else {
-//            method_exchangeImplementations(originalMethod, swizzledMethod);
-//        }
+    Class class = [self class];
+    Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
+    class_replaceMethod(class,
+                        originalSelector,
+                        method_getImplementation(swizzledMethod),
+                        method_getTypeEncoding(swizzledMethod));
 }
 
 #pragma mark - Helpers
 + (NSArray *)allPropertyNames
 {
+    /**
+     * Adapted from http://stackoverflow.com/a/11774276/544094
+     */
     unsigned count;
     objc_property_t *properties = class_copyPropertyList([self class], &count);
     

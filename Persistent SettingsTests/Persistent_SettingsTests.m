@@ -8,7 +8,7 @@
 
 #import <XCTest/XCTest.h>
 
-#import "PSTSettings.h"
+#import "PSTTestSettingsClass.h"
 
 @interface Persistent_SettingsTests : XCTestCase
 
@@ -16,36 +16,26 @@
 
 @implementation Persistent_SettingsTests
 
-- (void)setUp {
-    [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+- (void)testSetters
+{
+    PSTTestSettingsClass *settings = [[PSTTestSettingsClass alloc] init];
+    
+    settings.flagTheDoesSomething = @YES;
+    settings.someStringThatSaysStuff = @"words!";
+    settings.someNumberWeWantToStore = @402;
+    
+    XCTAssert([settings.flagTheDoesSomething isEqual:@YES]);
+    XCTAssert([settings.someStringThatSaysStuff isEqualToString:@"words!"]);
+    XCTAssert([settings.someNumberWeWantToStore isEqualToNumber:@402]);
 }
 
-- (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
-}
-
-- (void)testExample {
-    int prop0 = [[_PST prop0] intValue];
-    int prop1 = [[_PST prop1] intValue];
+- (void)testGetters
+{
+    PSTTestSettingsClass *settings = [[PSTTestSettingsClass alloc] init];
     
-    NSLog(@"%i, %i", prop0, prop1);
-    
-    [_PST setProp0:@(prop0+1)];
-    [_PST setProp1:@(prop1+1)];
-    NSNumber *prop0a = [_PST prop0];
-    NSNumber *prop1a = _PST.prop1;
-    NSLog(@"%@, %@", prop0a, prop1a);
-    
-//    XCTAssert(prop0 != prop0a && prop1 != prop1a);
-}
-
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+    XCTAssert([settings.flagTheDoesSomething isEqual:@YES]);
+    XCTAssert([settings.someStringThatSaysStuff isEqualToString:@"words!"]);
+    XCTAssert([settings.someNumberWeWantToStore isEqualToNumber:@402]);
 }
 
 @end

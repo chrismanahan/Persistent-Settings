@@ -8,14 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#define _PST [PSTSettings sharedSettings]
-
 @interface PSTSettings : NSObject
-
-@property (nonatomic) NSNumber *prop0;
-@property (nonatomic) NSNumber *prop1;
-@property (nonatomic) NSNumber *prop2;
-
-+ (instancetype)sharedSettings;
 
 @end

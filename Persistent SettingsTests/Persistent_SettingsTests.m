@@ -27,13 +27,13 @@
 }
 
 - (void)testExample {
-    NSNumber *prop0 = [_PST prop0];
-    NSNumber *prop1 = [_PST prop1];
+    int prop0 = [[_PST prop0] intValue];
+    int prop1 = [[_PST prop1] intValue];
     
-    NSLog(@"%@, %@", prop0, prop1);
+    NSLog(@"%i, %i", prop0, prop1);
     
-    [_PST setProp0:@50];
-    [_PST setProp1:@100];
+    [_PST setProp0:@(prop0+1)];
+    [_PST setProp1:@(prop1+1)];
     NSNumber *prop0a = [_PST prop0];
     NSNumber *prop1a = _PST.prop1;
     NSLog(@"%@, %@", prop0a, prop1a);

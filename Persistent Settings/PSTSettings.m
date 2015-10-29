@@ -99,27 +99,39 @@
     return rv;
 }
 
-
-#pragma mark - Swizzled Methods
-
-- (void)pst_swizzledSetter:(id)val
+- (NSString*)keyForProperty:(NSString*)prop
 {
-    NSString *setter = NSStringFromSelector(_cmd);
+    NSString *className = NSStringFromClass([self class]);
+    return [NSString stringWithFormat:@"%@_%@", className, prop];
+}
+
+- (NSString*)propertyFromSetter:(NSString*)setter
+{
+    NSAssert([setter hasPrefix:@"set"], @"method must be a setter");
     // trim off the 'set'
     NSString *prop = [setter substringFromIndex:3];
     // set the first letter to lower
     prop = [prop stringByReplacingCharactersInRange:NSMakeRange(0, 1)
                                          withString:[[prop substringToIndex:1] lowercaseString]];
     prop = [prop substringToIndex:prop.length -1];
+    return prop;
+}
+
+#pragma mark - Swizzled Methods
+
+- (void)pst_swizzledSetter:(id)val
+{
+    NSString *setter = NSStringFromSelector(_cmd);
+    NSString *prop = [self propertyFromSetter:setter];
     
-    [[NSUserDefaults standardUserDefaults] setObject:val forKey:prop];
+    [[NSUserDefaults standardUserDefaults] setObject:val forKey:[self keyForProperty:prop]];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (id)pst_swizzledGetter
 {
     NSString *getter = NSStringFromSelector(_cmd);
-    return [[NSUserDefaults standardUserDefaults] objectForKey:getter];
+    return [[NSUserDefaults standardUserDefaults] objectForKey:[self keyForProperty:getter]];
 }
 
 @end

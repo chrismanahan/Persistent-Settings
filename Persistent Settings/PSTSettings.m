@@ -15,9 +15,9 @@
 #pragma mark - Swizzling
 + (void)load
 {
-    static dispatch_once_t onceToken;
-    //
-    dispatch_once(&onceToken, ^{
+//    static dispatch_once_t onceToken;
+//    //
+//    dispatch_once(&onceToken, ^{
         // get the names of all the properties
         NSArray *propertyNames = [self allPropertyNames];
         
@@ -31,7 +31,7 @@
             setter = [NSString stringWithFormat:@"set%@:", setter];
             [self swizzleSetterWithName:setter];
         }
-    });
+//    });
 }
 
 + (void)swizzleGetterWithName:(NSString*)methodName

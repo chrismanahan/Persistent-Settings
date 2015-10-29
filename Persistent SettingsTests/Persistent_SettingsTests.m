@@ -8,6 +8,8 @@
 
 #import <XCTest/XCTest.h>
 
+#import "PSTSettings.h"
+
 @interface Persistent_SettingsTests : XCTestCase
 
 @end
@@ -25,8 +27,18 @@
 }
 
 - (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    NSNumber *prop0 = [_PST prop0];
+    NSNumber *prop1 = [_PST prop1];
+    
+    NSLog(@"%@, %@", prop0, prop1);
+    
+    [_PST setProp0:@50];
+    [_PST setProp1:@100];
+    NSNumber *prop0a = [_PST prop0];
+    NSNumber *prop1a = _PST.prop1;
+    NSLog(@"%@, %@", prop0a, prop1a);
+    
+//    XCTAssert(prop0 != prop0a && prop1 != prop1a);
 }
 
 - (void)testPerformanceExample {

@@ -14,6 +14,7 @@
 		9B54085C1BE1A06B0038EE21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B54085B1BE1A06B0038EE21 /* Assets.xcassets */; };
 		9B54085F1BE1A06B0038EE21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B54085D1BE1A06B0038EE21 /* LaunchScreen.storyboard */; };
 		9B54086A1BE1A06B0038EE21 /* Persistent_SettingsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5408691BE1A06B0038EE21 /* Persistent_SettingsTests.m */; };
+		9B5408881BE1A3800038EE21 /* PSTSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5408861BE1A3800038EE21 /* PSTSettings.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		9B5408651BE1A06B0038EE21 /* Persistent SettingsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Persistent SettingsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B5408691BE1A06B0038EE21 /* Persistent_SettingsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Persistent_SettingsTests.m; sourceTree = "<group>"; };
 		9B54086B1BE1A06B0038EE21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B5408861BE1A3800038EE21 /* PSTSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTSettings.m; sourceTree = "<group>"; };
+		9B5408871BE1A3800038EE21 /* PSTSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTSettings.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,8 @@
 		9B54084E1BE1A06A0038EE21 /* Persistent Settings */ = {
 			isa = PBXGroup;
 			children = (
+				9B5408861BE1A3800038EE21 /* PSTSettings.m */,
+				9B5408871BE1A3800038EE21 /* PSTSettings.h */,
 				9B5408521BE1A06B0038EE21 /* AppDelegate.h */,
 				9B5408531BE1A06B0038EE21 /* AppDelegate.m */,
 				9B5408551BE1A06B0038EE21 /* ViewController.h */,
@@ -211,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B5408881BE1A3800038EE21 /* PSTSettings.m in Sources */,
 				9B5408571BE1A06B0038EE21 /* ViewController.m in Sources */,
 				9B5408541BE1A06B0038EE21 /* AppDelegate.m in Sources */,
 				9B5408511BE1A06B0038EE21 /* main.m in Sources */,
@@ -400,6 +406,7 @@
 				9B5408701BE1A06B0038EE21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9B5408711BE1A06B0038EE21 /* Build configuration list for PBXNativeTarget "Persistent SettingsTests" */ = {
 			isa = XCConfigurationList;
@@ -408,6 +415,7 @@
 				9B5408731BE1A06B0038EE21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

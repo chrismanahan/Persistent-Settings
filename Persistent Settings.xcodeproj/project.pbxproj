@@ -12,7 +12,6 @@
 		9B5408571BE1A06B0038EE21 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5408561BE1A06B0038EE21 /* ViewController.m */; };
 		9B54085A1BE1A06B0038EE21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B5408581BE1A06B0038EE21 /* Main.storyboard */; };
 		9B54085C1BE1A06B0038EE21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B54085B1BE1A06B0038EE21 /* Assets.xcassets */; };
-		9B54085F1BE1A06B0038EE21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B54085D1BE1A06B0038EE21 /* LaunchScreen.storyboard */; };
 		9B54086A1BE1A06B0038EE21 /* Persistent_SettingsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5408691BE1A06B0038EE21 /* Persistent_SettingsTests.m */; };
 		9B5408881BE1A3800038EE21 /* PSTSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5408861BE1A3800038EE21 /* PSTSettings.m */; };
 /* End PBXBuildFile section */
@@ -36,7 +35,6 @@
 		9B5408561BE1A06B0038EE21 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		9B5408591BE1A06B0038EE21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9B54085B1BE1A06B0038EE21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9B54085E1BE1A06B0038EE21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B5408601BE1A06B0038EE21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B5408651BE1A06B0038EE21 /* Persistent SettingsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Persistent SettingsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B5408691BE1A06B0038EE21 /* Persistent_SettingsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Persistent_SettingsTests.m; sourceTree = "<group>"; };
@@ -92,7 +90,6 @@
 				9B5408561BE1A06B0038EE21 /* ViewController.m */,
 				9B5408581BE1A06B0038EE21 /* Main.storyboard */,
 				9B54085B1BE1A06B0038EE21 /* Assets.xcassets */,
-				9B54085D1BE1A06B0038EE21 /* LaunchScreen.storyboard */,
 				9B5408601BE1A06B0038EE21 /* Info.plist */,
 				9B54084F1BE1A06B0038EE21 /* Supporting Files */,
 			);
@@ -196,7 +193,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B54085F1BE1A06B0038EE21 /* LaunchScreen.storyboard in Resources */,
 				9B54085C1BE1A06B0038EE21 /* Assets.xcassets in Resources */,
 				9B54085A1BE1A06B0038EE21 /* Main.storyboard in Resources */,
 			);
@@ -248,14 +244,6 @@
 				9B5408591BE1A06B0038EE21 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		9B54085D1BE1A06B0038EE21 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9B54085E1BE1A06B0038EE21 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

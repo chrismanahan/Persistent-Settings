@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		9B077AB61BE2E1F500B2A29E /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 9B077AB51BE2E1F500B2A29E /* README.md */; };
+		9B077ABF1BE40A8A00B2A29E /* Persistent-Settings.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 9B077ABE1BE40A8A00B2A29E /* Persistent-Settings.podspec */; };
+		9B077AC31BE40EBC00B2A29E /* PSTSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B077AC21BE40EBC00B2A29E /* PSTSettings.m */; };
 		9B5408511BE1A06B0038EE21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5408501BE1A06B0038EE21 /* main.m */; };
 		9B5408541BE1A06B0038EE21 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5408531BE1A06B0038EE21 /* AppDelegate.m */; };
 		9B5408571BE1A06B0038EE21 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5408561BE1A06B0038EE21 /* ViewController.m */; };
 		9B54085A1BE1A06B0038EE21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B5408581BE1A06B0038EE21 /* Main.storyboard */; };
 		9B54085C1BE1A06B0038EE21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B54085B1BE1A06B0038EE21 /* Assets.xcassets */; };
 		9B54086A1BE1A06B0038EE21 /* Persistent_SettingsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5408691BE1A06B0038EE21 /* Persistent_SettingsTests.m */; };
-		9B5408881BE1A3800038EE21 /* PSTSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B5408861BE1A3800038EE21 /* PSTSettings.m */; };
 		9BA61C951BE2C6AA00A4418D /* PSTTestSettingsClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA61C941BE2C6AA00A4418D /* PSTTestSettingsClass.m */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,9 @@
 
 /* Begin PBXFileReference section */
 		9B077AB51BE2E1F500B2A29E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9B077ABE1BE40A8A00B2A29E /* Persistent-Settings.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Persistent-Settings.podspec"; sourceTree = "<group>"; };
+		9B077AC11BE40EBC00B2A29E /* PSTSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSTSettings.h; path = PersistentSettings/PSTSettings.h; sourceTree = "<group>"; };
+		9B077AC21BE40EBC00B2A29E /* PSTSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSTSettings.m; path = PersistentSettings/PSTSettings.m; sourceTree = "<group>"; };
 		9B54084C1BE1A06A0038EE21 /* Persistent Settings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Persistent Settings.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B5408501BE1A06B0038EE21 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9B5408521BE1A06B0038EE21 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -42,8 +46,6 @@
 		9B5408651BE1A06B0038EE21 /* Persistent SettingsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Persistent SettingsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B5408691BE1A06B0038EE21 /* Persistent_SettingsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Persistent_SettingsTests.m; sourceTree = "<group>"; };
 		9B54086B1BE1A06B0038EE21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9B5408861BE1A3800038EE21 /* PSTSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTSettings.m; sourceTree = "<group>"; };
-		9B5408871BE1A3800038EE21 /* PSTSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTSettings.h; sourceTree = "<group>"; };
 		9BA61C931BE2C6AA00A4418D /* PSTTestSettingsClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTTestSettingsClass.h; sourceTree = "<group>"; };
 		9BA61C941BE2C6AA00A4418D /* PSTTestSettingsClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTTestSettingsClass.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,9 +68,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B077AC01BE40CDD00B2A29E /* PersistentSettings */ = {
+			isa = PBXGroup;
+			children = (
+				9B077AC11BE40EBC00B2A29E /* PSTSettings.h */,
+				9B077AC21BE40EBC00B2A29E /* PSTSettings.m */,
+			);
+			name = PersistentSettings;
+			sourceTree = "<group>";
+		};
 		9B5408431BE1A06A0038EE21 = {
 			isa = PBXGroup;
 			children = (
+				9B077ABE1BE40A8A00B2A29E /* Persistent-Settings.podspec */,
 				9B077AB51BE2E1F500B2A29E /* README.md */,
 				9B54084E1BE1A06A0038EE21 /* Persistent Settings */,
 				9B5408681BE1A06B0038EE21 /* Persistent SettingsTests */,
@@ -88,8 +100,7 @@
 		9B54084E1BE1A06A0038EE21 /* Persistent Settings */ = {
 			isa = PBXGroup;
 			children = (
-				9B5408861BE1A3800038EE21 /* PSTSettings.m */,
-				9B5408871BE1A3800038EE21 /* PSTSettings.h */,
+				9B077AC01BE40CDD00B2A29E /* PersistentSettings */,
 				9BA61C931BE2C6AA00A4418D /* PSTTestSettingsClass.h */,
 				9BA61C941BE2C6AA00A4418D /* PSTTestSettingsClass.m */,
 				9B5408521BE1A06B0038EE21 /* AppDelegate.h */,
@@ -202,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B54085C1BE1A06B0038EE21 /* Assets.xcassets in Resources */,
+				9B077ABF1BE40A8A00B2A29E /* Persistent-Settings.podspec in Resources */,
 				9B54085A1BE1A06B0038EE21 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,8 +233,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B077AB61BE2E1F500B2A29E /* README.md in Sources */,
-				9B5408881BE1A3800038EE21 /* PSTSettings.m in Sources */,
 				9BA61C951BE2C6AA00A4418D /* PSTTestSettingsClass.m in Sources */,
+				9B077AC31BE40EBC00B2A29E /* PSTSettings.m in Sources */,
 				9B5408571BE1A06B0038EE21 /* ViewController.m in Sources */,
 				9B5408541BE1A06B0038EE21 /* AppDelegate.m in Sources */,
 				9B5408511BE1A06B0038EE21 /* main.m in Sources */,

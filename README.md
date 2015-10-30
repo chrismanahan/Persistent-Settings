@@ -33,7 +33,7 @@ You need to override `+load` on your subclass and call super. This is the only r
 
 + (void)load
 {
-[super load];
+    [super load];
 }
 
 @end
